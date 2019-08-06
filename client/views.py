@@ -27,7 +27,7 @@ def register(request):
     return render(request, 'client/register.html', context)
    
 
-#Connexion func
+#Connexion d'un user
 
 def login(request):
     form = LoginForm()
@@ -50,6 +50,7 @@ def login(request):
 
     return render(request, 'client/login.html', context)
 
+#Deconnexion d'un user
 
 def logout_view(request):
     logout(request)

@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %} List {% endblock %}
 
 {% block content %}
 <br><br><br>
@@ -18,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-                {% for user in users %}
+            {% for user in users %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ user.nom_repertoire}}</td> 
@@ -29,7 +28,7 @@
     </table>    
     <a href="{% url 'projet:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
     &thinsp;&thinsp;
-    <a href="#"><input type="submit" value="Gerer les Membres" class="btn btn-info"></a>
+
 {% endblock %}
 </div>
 </div>
