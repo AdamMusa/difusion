@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} List {% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="container">
+
+    <div class="text text-center"> <h1 class="text-center text-dark">La list de repertoire</h1> </div>
+    <br><br>
+    <div class="row">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"> <h3 class="text-success"> Nom</h3></th>
+                <th scope="col"> <h3 class="text-success"> Actions</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for user in users %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ user.nom_repertoire}}</td> 
+                <td><a href="{% url 'projet:index' user.pk %}" class="btn btn-primary">modifier</a>&thinsp; <a href="{% url 'projet:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    <a href="{% url 'projet:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
+    &thinsp;&thinsp;
+    <a href="#"><input type="submit" value="Gerer les Membres" class="btn btn-info"></a>
+{% endblock %}
+</div>
+</div>
