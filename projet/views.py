@@ -4,23 +4,27 @@ from django.views.generic import CreateView,ListView,DetailView,UpdateView,Delet
 from projet.models import Repertoire
 from projet.forms import RepertoireForm
 
+#this is comment for repository class
+
+#now we create a repository
 class RepertoireCreateView(CreateView):
- 
+    #projet = projet_repertoire.user_id
     form_class = RepertoireForm
     template_name = 'projet/index.html'
     success_url = reverse_lazy('projet:list')
 
+#we are listing all the repository
 class RepertoireListView(ListView):
     model = Repertoire
     template_name = 'projet/list.html'
     context_object_name = 'users'
-
+#we are going to update one repository
 class RepertoireUpdateView(UpdateView):
     form_class = RepertoireForm
     template_name = 'projet/index.html'
     success_url = reverse_lazy('projet:list')
     model = Repertoire
-
+# end we are going to delete one repository
 class RepertoireDeleteView(DeleteView):
     model = Repertoire
     template_name = 'projet/delete_confirm.html'

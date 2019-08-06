@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from client.forms import RegisterForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from client.models import Credit
 from django.contrib.auth import authenticate, login as auth_login, logout
 
 def register(request):

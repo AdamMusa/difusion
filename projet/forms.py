@@ -2,7 +2,7 @@ from django import forms
 from projet.models import Repertoire
 
 
-
+#there we are going to create one formulare by instance the class Repository
 class RepertoireForm(forms.ModelForm):
     class Meta:
         model = Repertoire
