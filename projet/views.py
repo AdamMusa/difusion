@@ -12,6 +12,11 @@ class RepertoireCreateView(CreateView):
     form_class = RepertoireForm
     template_name = 'projet/index.html'
     success_url = reverse_lazy('projet:list')
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 
 #we are listing all the repository
 class RepertoireListView(ListView):
