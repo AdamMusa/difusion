@@ -20,8 +20,8 @@
             {% for user in users %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ user.nom_repertoire}}</td> 
-                <td><a href="{% url 'projet:index' user.pk %}" class="btn btn-primary">modifier</a>&thinsp;&thinsp;&thinsp; <a href="{% url 'projet:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
+                <td><a href="#">{{ user.nom_repertoire }}</a></td>
+                <td class="text-center"><a href="{% url 'contact:index' %}" class="btn btn-primary">ajouter contact</a>&thinsp;&thinsp;&thinsp;<a href="{% url 'projet:delete' user.pk %}" class="btn btn-primary">modifier</a> &thinsp;&thinsp;&thinsp;<a href="{% url 'projet:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
             </tr>
             {% endfor %}
         </tbody>

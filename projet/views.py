@@ -4,7 +4,6 @@ from django.views.generic import CreateView,ListView,DetailView,UpdateView,Delet
 from projet.models import Repertoire
 from projet.forms import RepertoireForm
 
-#this is comment for repository class
 
 #now we create a repository
 class RepertoireCreateView(CreateView):
@@ -35,3 +34,4 @@ class RepertoireDeleteView(DeleteView):
     template_name = 'projet/delete_confirm.html'
     context_object_name = 'user'
     success_url = reverse_lazy('projet:list')
+

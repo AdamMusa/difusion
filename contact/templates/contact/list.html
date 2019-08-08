@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br><br><br>
+<div class="container">
+
+    <div class="text text-center"> <h1 class="text-center text-dark">La list des contactes</h1> </div>
+    <br><br>
+    <div class="row">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"> <h3 class="text-success"> Nom complet du contact</h3></th>
+                <th scope="col"> <h3 class="text-success"> Numero</h3></th>
+                <th scope="col"> <h3 class="text-success"> Actions</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><{{ user.nom_complet }}</td>
+                <td>{{ user.numero }}</td>
+                <td><a href="{% url 'contact:index' user.pk %}" class="btn btn-primary">modifier</a>&thinsp;&thinsp;&thinsp; <a href="{% url 'contact:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    <a href="{% url 'contact:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
+    &thinsp;&thinsp;
+
+{% endblock %}
+</div>
+</div>

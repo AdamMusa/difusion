@@ -8,9 +8,11 @@ class RepertoireForm(forms.ModelForm):
         model = Repertoire
         fields = ['nom_repertoire']
         widgets = {
-            'nom_repertoire': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nom de repertoire'})
+            'nom_repertoire': forms.TextInput(attrs={'class':'form-control form-is_valid', 'placeholder':'Nom de repertoire'})
         }
         labels = {
             'nom_repertoire':'Nom repertoire',
             
         }
+
+
