@@ -10,7 +10,7 @@ class RepertoireCreateView(CreateView):
     #projet = projet_repertoire.user_id
     form_class = RepertoireForm
     template_name = 'projet/index.html'
-    success_url = reverse_lazy('projet:list')
+    success_url = reverse_lazy('repertoire:list')
     
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -26,11 +26,11 @@ class RepertoireListView(ListView):
 class RepertoireUpdateView(UpdateView):
     form_class = RepertoireForm
     template_name = 'projet/index.html'
-    success_url = reverse_lazy('projet:list')
+    success_url = reverse_lazy('repertoire:list')
     model = Repertoire
 # end we are going to delete one repository
 class RepertoireDeleteView(DeleteView):
     model = Repertoire
     template_name = 'projet/delete_confirm.html'
     context_object_name = 'user'
-    success_url = reverse_lazy('projet:list')
+    success_url = reverse_lazy('repertoire:list')
