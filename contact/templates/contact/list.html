@@ -12,23 +12,24 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col"> <h3 class="text-success"> Nom complet du contact</h3></th>
+                <th scope="col"> <h3 class="text-success">Nom complet du contact</h3></th>
                 <th scope="col"> <h3 class="text-success"> Numero</h3></th>
                 <th scope="col"> <h3 class="text-success"> Actions</h3></th>
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for contact in repertoire.contacts.all %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td><{{ user.nom_complet }}</td>
-                <td>{{ user.numero }}</td>
-                <td><a href="{% url 'contact:index' user.pk %}" class="btn btn-primary">modifier</a>&thinsp;&thinsp;&thinsp; <a href="{% url 'contact:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
+                <td>{{contact.num_complet}}</td>
+                <td>{{contact.numero}}</td>
+                <td><a href="{% url 'contact:create' pk=contact.pk %}" class="btn btn-primary">modifier</a>&thinsp;&thinsp;&thinsp; <a href="{% url 'contact:delete' pk=contact.pk %}" class="btn btn-danger">supprimer</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>    
-    <a href="{% url 'contact:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
+    <a href="{% url 'repertoire:list' %}"><input type="button" value="accueil" class="btn btn-primary"></a> &ensp;
+    <a href="{% url 'contact:create_contact' pk=repertoire.pk %}" class="btn btn-secondary">Ajouter un nouveau contact</a>
     &thinsp;&thinsp;
 
 {% endblock %}

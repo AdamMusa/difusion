@@ -21,7 +21,7 @@ class RepertoireCreateView(CreateView):
 class RepertoireListView(ListView):
     model = Repertoire
     template_name = 'projet/list.html'
-    context_object_name = 'users'
+    context_object_name = 'repertoires'
 #we are going to update one repository
 class RepertoireUpdateView(UpdateView):
     form_class = RepertoireForm
@@ -34,4 +34,3 @@ class RepertoireDeleteView(DeleteView):
     template_name = 'projet/delete_confirm.html'
     context_object_name = 'user'
     success_url = reverse_lazy('projet:list')
-

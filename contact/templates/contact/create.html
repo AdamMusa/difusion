@@ -11,8 +11,10 @@
                     {% csrf_token %}
                      {{ form.as_p }}
                     <input type="submit" value="Save" class="btn btn-secondary">
-                    <a href="{% url 'contact:list' %}"><input type="submit" value="Liste" class="btn btn-success"></a>
+                    {% for contact in repertoire.contacts.all %}
+                    <a href="{% url 'contact:detail' pk=repertoire.pk %}"><input type="button" value="Liste" class="btn btn-success"></a>
                 </div>
+                {% endfor %}
             {% endif %}
         </div>
     </form>

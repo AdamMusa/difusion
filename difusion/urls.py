@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-    path('',include('projet.urls')),
+    path('',include('projet.urls', namespace='repertoire')),
     path('',include('client.urls')),
     path('message/',include('message.urls')),
     path('contact/',include('contact.urls')),

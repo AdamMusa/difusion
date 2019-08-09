@@ -2,8 +2,9 @@ from django.urls import path
 from projet.views import (RepertoireCreateView, RepertoireListView,
                             RepertoireUpdateView,RepertoireDeleteView)
 from django.views.generic.base import RedirectView
+from contact.views import ContactCreateView
 
-app_name = 'projet'
+app_name = 'repertoire'
 
 urlpatterns = [
     path('', RepertoireCreateView.as_view(),name='index'),

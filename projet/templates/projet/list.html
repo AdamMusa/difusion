@@ -17,16 +17,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for repertoire in request.user.repertoires.all %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td><a href="#">{{ user.nom_repertoire }}</a></td>
-                <td class="text-center"><a href="{% url 'contact:index' %}" class="btn btn-primary">ajouter contact</a>&thinsp;&thinsp;&thinsp;<a href="{% url 'projet:delete' user.pk %}" class="btn btn-primary">modifier</a> &thinsp;&thinsp;&thinsp;<a href="{% url 'projet:delete' user.pk %}" class="btn btn-danger">supprimer</a></td>
+                <td><a href="{% url 'contact:detail' pk=repertoire.pk %}">{{ repertoire }}</a></td>
+                <td class="text-center"><a href="{% url 'contact:create' pk=repertoire.pk %}" class="btn btn-primary">ajouter contact</a>&thinsp;&thinsp;&thinsp;<a href="{% url 'repertoire:index' pk=repertoire.pk %}" class="btn btn-primary">modifier</a> &thinsp;&thinsp;&thinsp;<a href="{% url 'repertoire:delete' pk=repertoire.pk %}" class="btn btn-danger">supprimer</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>    
-    <a href="{% url 'projet:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
+    <a href="{% url 'repertoire:index' %}"><input type="submit" value="accueil" class="btn btn-primary"></a>
     &thinsp;&thinsp;
 
 {% endblock %}

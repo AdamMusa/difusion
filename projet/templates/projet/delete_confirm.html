@@ -7,7 +7,7 @@
 <form  method="POST">
         {% csrf_token %}
         <h3> Voulez vous supprimer {{user.nom}} </h3>
-        <a href="{% url 'projet:list' %}">Non</a>
+        <a href="{% url 'repertoire:list' %}">Non</a>
         <input type="submit" value=" Oui" class="btn btn-danger">
     </form>
 {% endblock %}
